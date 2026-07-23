@@ -1,0 +1,22 @@
+# MkDocs build output
+site/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Example run artefacts
+runs/
+logs/
+*.zip
+*.mp4
+# ...but the figures and render embedded in the handbook are deliverables.
+!docs/assets/*.mp4
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store

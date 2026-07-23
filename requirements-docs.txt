@@ -1,0 +1,6 @@
+# Toolchain for building this handbook. Participants do NOT need this —
+# it is only for previewing or contributing to the site.
+#
+#   pip install -r requirements-docs.txt
+#   mkdocs serve
+mkdocs-material>=9.5

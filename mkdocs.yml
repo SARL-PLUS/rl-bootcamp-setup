@@ -1,0 +1,122 @@
+# =============================================================================
+# RL Bootcamp — Participant Primer
+# Build:   mkdocs build --strict
+# Serve:   mkdocs serve        # http://127.0.0.1:8000
+#
+# This site is PUBLIC and permanent. It documents setup, tooling and general
+# RL practice only. Nothing here should reveal the exercises, environments or
+# solutions of any particular bootcamp edition — that material stays in the
+# private, per-year tutorial repository.
+# =============================================================================
+site_name: RL Bootcamp — Participant Primer
+site_description: >-
+  Install the toolkit, learn the mechanics, and arrive ready. The permanent
+  setup-and-basics companion to the hands-on RL Bootcamp tutorial track.
+site_author: Leander Grech
+site_url: https://sarl-plus.github.io/rl-bootcamp-setup/
+copyright: >-
+  Written by Leander Grech
+  with Claude Opus 4.8 &middot; last updated 23 July 2026 &middot;
+  <a href="https://github.com/SARL-PLUS/rl-bootcamp-setup/issues">report an issue</a> &middot;
+  <a href="https://github.com/SARL-PLUS/rl-bootcamp-setup/blob/main/LICENSE">MIT licensed</a>
+
+repo_url: https://github.com/SARL-PLUS/rl-bootcamp-setup
+repo_name: SARL-PLUS/rl-bootcamp-setup
+edit_uri: edit/main/docs/
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: en
+  custom_dir: docs/overrides
+  icon:
+    logo: material/rocket-launch-outline
+    repo: fontawesome/brands/github
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.action.edit
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  version: !ENV [DOCS_VERSION, "0.2.2"]   # mirrors the repo-root VERSION file
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/SARL-PLUS
+      name: SARL-PLUS on GitHub
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.keys
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Before you arrive: before-you-arrive.md
+  - Setup:
+      - setup/installation.md
+      - setup/conda-environment.md
+      - setup/troubleshooting.md
+  - Basics:
+      - basics/gymnasium.md
+      - basics/stable-baselines3.md
+      - basics/worked-example.md
+      - basics/tensorboard.md
+  - FAQ: faq.md
